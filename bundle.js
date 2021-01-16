@@ -62,13 +62,10 @@ function fix_resolution()
 
 function Node()
 {
-    // this.radius = Math.round(3+Math.random()*3);
     this.radius = Math.round( (1+Math.random()) * 1.5 * scale );
     this.x = Math.floor((Math.random() * ((+getComputedStyle(canvas).getPropertyValue("width").slice(0, -2) * scale) - this.radius + 1) + this.radius));
     this.y = Math.floor((Math.random() * ((+getComputedStyle(canvas).getPropertyValue("height").slice(0, -2) * scale) - this.radius + 1) + this.radius));
     this.color = colors[Math.floor(Math.random()*colors.length)];
-    // this.speedx = Math.round((Math.random()*201))/100;
-    // this.speedy = Math.round((Math.random()*201))/100;
     this.speedx = Math.round(Math.random() * scale);
     this.speedy = Math.round(Math.random() * scale);
 
@@ -137,7 +134,6 @@ function draw_vertices()
             const yd = node1.y - node2.y;
             const xd = node1.x - node2.x;
             const d  = Math.sqrt(xd * xd + yd * yd);
-            // if ( d < 200 )
             if ( d < thresholdDistance )
             {
                 context.beginPath();
